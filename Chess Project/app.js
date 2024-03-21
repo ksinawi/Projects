@@ -305,13 +305,13 @@ function revertIds() {
 function checkMate () {
     const kings = Array.from(document.querySelectorAll('#king'))
 
-    if (!kings.some(king => king.firstChild.classList.contains('white'))) {
+    if (kings.some(king => king.firstChild.classList.contains('white'))) {
         infoDisplay.innerHTML = "Black Player Wins"
         const allSquares = document.querySelectorAll('.square')
         allSquares.forEach(square => square.firstChild?.setAttribute('draggable', false))
     }
 
-    if (!kings.some(king => king.firstChild.classList.contains('black'))) {
+    if (kings.some(king => king.firstChild.classList.contains('black'))) {
         infoDisplay.innerHTML = "White Player Wins"
         const allSquares = document.querySelectorAll('.square')
         allSquares.forEach(square => square.firstChild?.setAttribute('draggable', false))
